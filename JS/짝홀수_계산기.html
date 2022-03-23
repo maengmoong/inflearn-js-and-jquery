@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수로 지구본 움직이기</title>
+</head>
+<body>
+    <script>
+        //홀수짝수 체크해주는 함수
+
+        function checkOdd(number){
+            //if의 조건식이 true이면{}가 실행되고 false이면 else가 실행된다.(비어있는 문자열과 숫자0은 false으로 간주된다.)
+            if(number % 2){
+                //%연산자는 나머지값을 나타낸다 ex) 5 % 2 = 1 (5 나누기 2를 했을때의 나머지가 1이므로 1이 결과값으로 출력된다.)
+                //홀수일 경우 나머지가 0이 아닌 숫자로 나옴 => 0이 아닌 경우 => true
+                document.write(number+"은 홀수입니다. <br>")
+            }else{
+                //조건식이 거짓이면 다음 코드블록이 실행된다.
+                document.write(number+"은 짝수입니다. <br>") // 짝수는 나머지가 0 => 결과값 0 => false
+            }
+        }    
+
+        //사용자로부터 값을 입력받음
+        var number = prompt("숫자를 입력하세요!");
+        checkOdd(number);
+
+    </script>
+</body>
+</html>
