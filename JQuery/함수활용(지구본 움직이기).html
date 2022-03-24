@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지구본 움직이기</title>
+    <style>
+        body{
+            font-size: 10pt;
+        }
+
+        .wrapper{
+            margin: auto;
+        }
+
+        #panel{
+            width: 600px;
+            height: 500px;
+            border: 1px solid #999;
+            position: relative;
+        }
+
+        #earth{
+            position: absolute;
+            width: 80px;
+            left: 50px;
+            top: 120px;
+        }
+
+        #nav{
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //지구본 찾기
+            var $earth = $("#earth");
+
+            //버튼에 이벤트 등록하기
+            $("#btn-start").click(function(){
+                
+                //지구본 위치값 구하기
+                var y = parseInt($("#txt-Y").val()); //인풋에 string으로 넘어오는 y의 값을 숫자로 변환한다.
+                var x = parseInt($("#txt-X").val()); //인풋에 string으로 넘어오는 x의 값을 숫자로 변환한다.
+                
+                //지구본 움직이기
+                if((x >= 0 && x <= 500) && (y >= 0 && y<= 300)){
+                    $earth.css({
+                        left:x,
+                        top:y
+                    });
+                }else{
+                    alert("입력된 값이 범위를 벗어났습니다.");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wapper">
+        <div id="panel">
+            <img src="../images/gigu.png" alt="지구본" id="earth">
+        </div>
+
+        <div id="nav">
+            <label>x값 입력 : </label>
+            <input type="text" id="txt-X">
+            <br>
+            <label>y값 입력 : </label>
+            <input type="text" id="txt-Y">
+            <br>
+            <button id="btn-start">지구본 움직이기</button>
+        </div>
+    </div>
+</body>
+</html>
