@@ -11,6 +11,11 @@
         //홀수짝수 체크해주는 함수
 
         function checkOdd(number){
+            // 값이 없을 때
+            if(!number) {
+                document.write("값을 입력해주세요");
+                return;
+            }
             //if의 조건식이 true이면{}가 실행되고 false이면 else가 실행된다.(비어있는 문자열과 숫자0은 false으로 간주된다.)
             if(number % 2){
                 //%연산자는 나머지값을 나타낸다 ex) 5 % 2 = 1 (5 나누기 2를 했을때의 나머지가 1이므로 1이 결과값으로 출력된다.)
